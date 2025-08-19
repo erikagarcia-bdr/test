@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDR to AE Career Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            width: 80vw;
+            max-width: 600px;
+        }
+        /* Simple spinner */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #4f46e5;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">Your Playbook: From BDR to Account Executive</h1>
+            <p class="text-lg text-gray-600">An actionable roadmap for building your sales career at AppFolio.</p>
+        </header>
+
+        <main>
+            <section id="expectations" class="mb-16">
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-6 text-indigo-600">Setting Realistic Expectations</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-center">
+                        <div>
+                            <div class="text-6xl font-bold text-amber-500">1+</div>
+                            <h3 class="text-xl font-semibold mt-2">Year Minimum Tenure</h3>
+                            <p class="mt-2 text-gray-600">Mastery takes time. Our internal mobility guidelines require at least one year in the BDR role to ensure you've mastered the fundamentals.</p>
+                        </div>
+                        <div>
+                            <div class="text-6xl font-bold text-teal-500">∞</div>
+                            <h3 class="text-xl font-semibold mt-2">Many Paths to Success</h3>
+                            <p class="mt-2 text-gray-600">The AE role is a primary goal, but not the only one. Your BDR skills open doors to Marketing, Customer Success, Enablement, and more.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gemini API Feature Section 1 -->
+            <section id="ai-planner" class="mb-16">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-2 text-indigo-600">✨ AI-Powered Development Plan</h2>
+                    <p class="text-center text-gray-600 mb-6">Select up to 3 competencies you want to improve, and get a personalized 1-week action plan.</p>
+                    
+                    <div id="competency-form">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2 text-indigo-700">Strategic & Business Acumen</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Business Acumen"> <span class="ml-2 text-gray-700">Business Acumen</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Analytical Skills"> <span class="ml-2 text-gray-700">Analytical Skills</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Selling Through Curiosity"> <span class="ml-2 text-gray-700">Selling Through Curiosity</span></label>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2 text-amber-700">Execution & Process</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Action Oriented Mentality"> <span class="ml-2 text-gray-700">Action Oriented Mentality</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Organization and Planning"> <span class="ml-2 text-gray-700">Organization and Planning</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Perseverance"> <span class="ml-2 text-gray-700">Perseverance</span></label>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2 text-teal-700">Personal & Interpersonal</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Communication"> <span class="ml-2 text-gray-700">Communication</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Learning on the Fly (Coachability)"> <span class="ml-2 text-gray-700">Learning on the Fly</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" value="Teamwork and Peer Relationships"> <span class="ml-2 text-gray-700">Teamwork</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button id="generate-plan-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300">Generate My 1-Week Plan</button>
+                        </div>
+                    </div>
+                    
+                    <div id="plan-result" class="mt-8 hidden">
+                        <div id="loader-plan" class="loader mx-auto my-4"></div>
+                        <div id="plan-content" class="bg-indigo-50 p-6 rounded-lg border border-indigo-200"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature Section 2 -->
+            <section id="ai-coach" class="mb-16">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-2 text-amber-600">✨ AI Objection Handling Coach</h2>
+                    <p class="text-center text-gray-600 mb-6">Select a common objection and get a coached response based on the "Selling Through Curiosity" framework.</p>
+                    
+                    <div id="objection-form" class="text-center">
+                        <select id="objection-select" class="w-full md:w-1/2 mx-auto p-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                            <option value="It's too expensive.">"It's too expensive."</option>
+                            <option value="We're happy with our current solution.">"We're happy with our current solution."</option>
+                            <option value="Just send me an email.">"Just send me an email."</option>
+                            <option value="Call me back next quarter.">"Call me back next quarter."</option>
+                            <option value="We don't have the budget right now.">"We don't have the budget right now."</option>
+                        </select>
+                        <button id="get-coaching-btn" class="mt-4 bg-amber-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-700 transition duration-300">Get Coaching</button>
+                    </div>
+                    
+                    <div id="coaching-result" class="mt-8 hidden">
+                        <div id="loader-coach" class="loader mx-auto my-4" style="border-top-color: #d97706;"></div>
+                        <div id="coaching-content" class="bg-amber-50 p-6 rounded-lg border border-amber-200"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature Section 3 -->
+            <section id="ai-email" class="mb-16">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-2 text-teal-600">✨ AI Cold Email Assistant</h2>
+                    <p class="text-center text-gray-600 mb-6">Provide a few details about your prospect and get a personalized email draft.</p>
+                    
+                    <div id="email-form">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <input type="text" id="prospect-title" placeholder="Prospect's Title (e.g., Property Manager)" class="p-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                            <input type="text" id="company-type" placeholder="Company Type (e.g., Multifamily)" class="p-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                            <input type="text" id="pain-point" placeholder="Potential Pain Point (e.g., maintenance)" class="p-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div class="text-center">
+                            <button id="generate-email-btn" class="bg-teal-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-teal-700 transition duration-300">Generate Email Draft</button>
+                        </div>
+                    </div>
+                    
+                    <div id="email-result" class="mt-8 hidden">
+                        <div id="loader-email" class="loader mx-auto my-4" style="border-top-color: #0d9488;"></div>
+                        <div id="email-content" class="bg-teal-50 p-6 rounded-lg border border-teal-200 text-left"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="foundation" class="mb-16">
+                 <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">The Foundation of Growth: Professionalism</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="font-bold text-lg">Urgency & Ownership</h3>
+                            <p class="text-sm text-gray-600">Treat every task as critical. Own your successes and your setbacks.</p>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-4">
+                            <h3 class="font-bold text-lg">Proactive Communication</h3>
+                            <p class="text-sm text-gray-600">Never let a deadline pass in silence. Communicate delays before they happen.</p>
+                        </div>
+                        <div class="border-l-4 border-teal-500 pl-4">
+                            <h3 class="font-bold text-lg">Intentional Networking</h3>
+                            <p class="text-sm text-gray-600">Connect with AE leaders and former BDRs. Be a familiar face.</p>
+                        </div>
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <h3 class="font-bold text-lg">Drive Career Conversations</h3>
+                            <p class="text-sm text-gray-600">Use 1:1s and reviews to discuss your goals and track progress.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="phases" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">The Three Phases of Your Journey</h2>
+                <div class="relative">
+                    <div class="border-l-2 border-indigo-300 absolute h-full top-0 left-1/2 -ml-px"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                        <div class="md:text-right md:pr-8">
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-2xl font-bold text-indigo-600">Phase 1: Master Your Domain</h3>
+                                <p class="text-sm text-gray-500 mb-4">(First 6-9 Months)</p>
+                                <p class="text-gray-700">Become an undeniable top performer. Exceed your quota, master the product, and build a true partnership with your AE.</p>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div class="md:pl-8">
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-2xl font-bold text-amber-600">Phase 2: Think Like an AE</h3>
+                                <p class="text-sm text-gray-500 mb-4">(Months 9-15)</p>
+                                <p class="text-gray-700">Shift your mindset from booking meetings to understanding how deals are won. Shadow the full sales cycle and learn to handle deeper objections.</p>
+                            </div>
+                        </div>
+                        <div class="md:text-right md:pr-8">
+                            <div class="bg-white rounded-lg shadow-md p-6">
+                                <h3 class="text-2xl font-bold text-teal-600">Phase 3: Act Like an AE</h3>
+                                <p class="text-sm text-gray-500 mb-4">(Months 15+)</p>
+                                <p class="text-gray-700">Proactively demonstrate your readiness. Ask to "co-pilot" a deal, build your 30/60/90 day plan, and formalize your intent with your manager.</p>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="competencies" class="mb-16">
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">Demonstrating AE Competencies</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-4 text-indigo-700">Strategic & Business Acumen</h3>
+                            <div class="chart-container h-64">
+                                <canvas id="strategicChart"></canvas>
+                            </div>
+                            <p class="text-sm mt-4 text-gray-600">Go beyond the script. Analyze your performance, think long-term, and master "Selling Through Curiosity."</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-4 text-amber-700">Execution & Process Management</h3>
+                             <div class="chart-container h-64">
+                                <canvas id="executionChart"></canvas>
+                            </div>
+                            <p class="text-sm mt-4 text-gray-600">Be known for your urgency and organization. Improve processes and persevere through challenges.</p>
+                        </div>
+                        <div class="text-center md:col-span-2 lg:col-span-1">
+                            <h3 class="text-xl font-semibold mb-4 text-teal-700">Personal & Interpersonal Skills</h3>
+                             <div class="chart-container h-64">
+                                <canvas id="personalChart"></canvas>
+                            </div>
+                            <p class="text-sm mt-4 text-gray-600">Communicate clearly, be coachable, and build strong team relationships. Your integrity is your most valuable asset.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+            <p class="text-gray-600">This playbook is a guide, but your career is your own. Take ownership, be proactive, and stay hungry.</p>
+            <p class="text-sm text-gray-500 mt-2">AppFolio Sales Development</p>
+        </footer>
+    </div>
+
+    <script>
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('strategicChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Business Acumen', 'Analytical Skills', ['Selling Through', 'Curiosity'], 'Goal Orientation'],
+                datasets: [{
+                    data: [25, 25, 25, 25],
+                    backgroundColor: ['#4f46e5', '#6366f1', '#818cf8', '#a5b4fc'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: tooltipCallback.plugins
+            }
+        });
+
+        new Chart(document.getElementById('executionChart'), {
+            type: 'doughnut',
+            data: {
+                labels: [['Action Oriented', 'Mentality'], 'Organization', 'Process Management', 'Perseverance'],
+                datasets: [{
+                    data: [25, 25, 25, 25],
+                    backgroundColor: ['#d97706', '#f59e0b', '#fbbf24', '#fcd34d'],
+                     hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: tooltipCallback.plugins
+            }
+        });
+
+        new Chart(document.getElementById('personalChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Communication', ['Learning on', 'the Fly'], 'Teamwork', 'Integrity'],
+                datasets: [{
+                    data: [25, 25, 25, 25],
+                    backgroundColor: ['#0d9488', '#14b8a6', '#2dd4bf', '#5eead4'],
+                     hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: tooltipCallback.plugins
+            }
+        });
+
+        // Gemini API Feature 1 Logic
+        const generateBtn = document.getElementById('generate-plan-btn');
+        const planResultDiv = document.getElementById('plan-result');
+        const planContentDiv = document.getElementById('plan-content');
+        const loaderPlan = document.getElementById('loader-plan');
+        const checkboxes = document.querySelectorAll('#competency-form input[type="checkbox"]');
+
+        generateBtn.addEventListener('click', async () => {
+            const selectedCompetencies = Array.from(checkboxes)
+                .filter(i => i.checked)
+                .map(i => i.value);
+
+            planResultDiv.style.display = 'block';
+            planContentDiv.style.display = 'none';
+            loaderPlan.style.display = 'block';
+            
+            if (selectedCompetencies.length === 0) {
+                planContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Please select at least one competency to generate a plan.</p>`;
+                loaderPlan.style.display = 'none';
+                planContentDiv.style.display = 'block';
+                return;
+            }
+            
+            if (selectedCompetencies.length > 3) {
+                 planContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Please select no more than 3 competencies for a focused plan.</p>`;
+                loaderPlan.style.display = 'none';
+                planContentDiv.style.display = 'block';
+                return;
+            }
+
+            const prompt = `You are an expert sales manager at AppFolio creating a development plan for a Business Development Representative (BDR). The BDR wants to focus on the following competencies: ${selectedCompetencies.join(', ')}. Generate a concise, actionable 3-step plan for the next week that they can use to develop these skills. Provide specific examples relevant to a BDR's daily work. Format the response as a clean HTML unordered list (\`<ul>\`), with each list item (\`<li>\`) containing a bolded title for the step (\`<strong>\`) followed by the description.`;
+            
+            try {
+                const generatedPlan = await callGeminiApiWithExponentialBackoff(prompt);
+                planContentDiv.innerHTML = `
+                    <h3 class="text-xl font-bold mb-4 text-indigo-800">Your Personalized 1-Week Plan</h3>
+                    ${generatedPlan}
+                `;
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                planContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Sorry, we couldn't generate a plan at this time. Please try again later.</p>`;
+            } finally {
+                loaderPlan.style.display = 'none';
+                planContentDiv.style.display = 'block';
+            }
+        });
+
+        // Gemini API Feature 2 Logic
+        const getCoachingBtn = document.getElementById('get-coaching-btn');
+        const coachingResultDiv = document.getElementById('coaching-result');
+        const coachingContentDiv = document.getElementById('coaching-content');
+        const loaderCoach = document.getElementById('loader-coach');
+        const objectionSelect = document.getElementById('objection-select');
+
+        getCoachingBtn.addEventListener('click', async () => {
+            const selectedObjection = objectionSelect.value;
+
+            coachingResultDiv.style.display = 'block';
+            coachingContentDiv.style.display = 'none';
+            loaderCoach.style.display = 'block';
+
+            const prompt = `You are an expert sales coach at AppFolio, training a Business Development Representative (BDR) on objection handling. The BDR is facing the objection: "${selectedObjection}". Provide a coached response using the "Selling Through Curiosity" framework. Your response should be in HTML and have two parts: 1) A \`<h4>\` with the title "The Strategy". Below it, explain the goal of the response (e.g., to pivot from price to value, to understand their current process, etc.). 2) A \`<h4>\` with the title "What to Say". Below it, provide the exact script for the BDR to use, formatted as a blockquote (\`<blockquote>\`).`;
+
+            try {
+                const coachedResponse = await callGeminiApiWithExponentialBackoff(prompt);
+                coachingContentDiv.innerHTML = coachedResponse;
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                coachingContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Sorry, we couldn't generate a coached response at this time. Please try again later.</p>`;
+            } finally {
+                loaderCoach.style.display = 'none';
+                coachingContentDiv.style.display = 'block';
+            }
+        });
+
+        // Gemini API Feature 3 Logic
+        const generateEmailBtn = document.getElementById('generate-email-btn');
+        const emailResultDiv = document.getElementById('email-result');
+        const emailContentDiv = document.getElementById('email-content');
+        const loaderEmail = document.getElementById('loader-email');
+        const prospectTitleInput = document.getElementById('prospect-title');
+        const companyTypeInput = document.getElementById('company-type');
+        const painPointInput = document.getElementById('pain-point');
+
+        generateEmailBtn.addEventListener('click', async () => {
+            const prospectTitle = prospectTitleInput.value;
+            const companyType = companyTypeInput.value;
+            const painPoint = painPointInput.value;
+
+            if (!prospectTitle || !companyType) {
+                emailResultDiv.style.display = 'block';
+                emailContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Please provide at least a Prospect Title and Company Type.</p>`;
+                return;
+            }
+
+            emailResultDiv.style.display = 'block';
+            emailContentDiv.style.display = 'none';
+            loaderEmail.style.display = 'block';
+
+            const prompt = `You are an expert sales development representative at AppFolio, specializing in property management software. Your tone is helpful, consultative, and curious, never pushy. Based on the following prospect details, write a concise and compelling cold email. The email must follow the 'Selling Through Curiosity' framework. It should have a clear subject line, a personalized opening, a value proposition tied to the pain point, and a low-friction call-to-action (e.g., asking for a brief chat, not a demo). Format the response in HTML with an \`<h4>\` for the subject line (e.g., \`<h4>Subject: Your Subject Here</h4>\`) and a \`<p>\` for the body, using \`<br><br>\` for paragraph breaks.
+            
+            Prospect Title: ${prospectTitle}
+            Company Type: ${companyType}
+            Potential Pain Point: ${painPoint || 'general operational efficiency'}`;
+
+            try {
+                const emailDraft = await callGeminiApiWithExponentialBackoff(prompt);
+                emailContentDiv.innerHTML = emailDraft;
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                emailContentDiv.innerHTML = `<p class="text-red-600 font-semibold">Sorry, we couldn't generate an email draft at this time. Please try again later.</p>`;
+            } finally {
+                loaderEmail.style.display = 'none';
+                emailContentDiv.style.display = 'block';
+            }
+        });
+
+
+        async function callGeminiApiWithExponentialBackoff(prompt, maxRetries = 3) {
+            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = { contents: chatHistory };
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+            
+            let delay = 1000; // Start with 1 second
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API response not OK: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Invalid response structure from API");
+                    }
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error; 
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Double the delay for the next retry
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
